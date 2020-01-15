@@ -43,6 +43,8 @@ void foo(char*,char);
 
 int main(int argc,char* argv[])
 {
+	// This function take first argument as command line argument
+	// and second argument as seperator
 	foo(argv[1],',');
 }
 
