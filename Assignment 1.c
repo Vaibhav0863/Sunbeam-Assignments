@@ -63,3 +63,4 @@ void foo(char* p,char ch)
 		i++;
 	}
 }
+
