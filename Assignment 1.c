@@ -58,3 +58,4 @@ void foo(char* p)
 	}
 }
 
+// Hello world
