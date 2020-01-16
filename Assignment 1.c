@@ -57,5 +57,3 @@ void foo(char* p)
 		i++;
 	}
 }
-
-// Hello world
