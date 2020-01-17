@@ -8,6 +8,7 @@ void getStrings(char*,char*);
 void StringCopy(char*,char*);
 void strCat(char*,char*);
 void strRev(char*);
+int strCmp(char*,char*);
 
 
 int main()
@@ -35,11 +36,11 @@ int main()
 
 	//++++++++++++++++++++++++++++STRING REVERSE+++++++++++++++++++++++++++++++
 
-	strRev(src);
+	// strRev(src);
 
 	//+++++++++++++++++++++++++++++STRING COMPAIR++++++++++++++++++++++++++++++
 
-	// printf("%d\n", strcmp(src,des));
+	printf("%d\n", strCmp(src,des));
 }
 
 void getStrings(char *src,char *des)
@@ -112,7 +113,50 @@ void strRev(char *p)
 	}
 }
 
-// void strCmp(char *p,char *q)
-// {
-// 	if()
-// }
+int strCmp(char *p,char *q)
+{
+	int flag = 0;
+	if(strlen(p)==strlen(q))
+	{
+		int i = 0;
+
+		while(*(p+i)!='\0')
+		{
+			if((*(p+i)-*(q+i))<0)
+			{
+				flag = -1;
+				// break;
+				return flag;
+			}
+			else if((*(p+i)-*(q+i))>0)
+			{
+				flag = 1;
+				// break;
+				return flag;
+			}
+			i++;
+		}
+
+		// if(flag == 1)
+		// {
+		// 	return flag;
+		// }
+		// else if(flag == -1)
+		// {
+		// 	return flag;
+		// }
+		if(flag == 0 )
+		{
+			return flag;
+		}
+		else
+		{
+			return flag;
+		}
+	}
+	else
+	{
+		flag = 1;
+		return flag;
+	}
+}
