@@ -7,7 +7,6 @@ typedef struct
 {
 	int id;
 	char name[20];
-	
 	int sub[3];
 }DATA;
 
@@ -42,22 +41,23 @@ int isEmpty(QUEUE *q)
 }
 
 // Collecting DATA from user
-void collectData(QUEUE *q,int i)
+void collectData(QUEUE *q)
 {
+
 	printf("Enter ID\n");
-	scanf("%d",&q->stud[i].id);
+	scanf("%d",&q->stud[q->rear].id);
 
 	printf("Enter Name\n");
-	scanf("%s",q->stud[i].name);
+	scanf("%s",q->stud[q->rear].name);
 
 	printf("Enter English marks\n");
-	scanf("%d", &q->stud[i].sub[ENG]);
+	scanf("%d", &q->stud[q->rear].sub[ENG]);
 
 	printf("Enter Math marks\n");
-	scanf("%d", &q->stud[i].sub[MATH]);
+	scanf("%d", &q->stud[q->rear].sub[MATH]);
 
 	printf("Enter Science marks\n");
-	scanf("%d", &q->stud[i].sub[SCIENCE]);
+	scanf("%d", &q->stud[q->rear].sub[SCIENCE]);
 }
 
 void enqueue(QUEUE *q)
@@ -144,7 +144,7 @@ int main()
 				{
 					enqueue(&q);
 
-					collectData(&q, q.rear);
+					collectData(&q);
 				}
 				else
 				{

@@ -24,3 +24,7 @@ Input employee information from the user including his employee id, name, addres
 ### 6. Assignment 6
 
 Implement a circular queue of students. Each student information includes roll, name, std, subject names and corresponding subject marks. Assume that each student hold subject names & marks of 6 subjects. Write a menu-driven program to implement push and pop functionality.
+
+### 7. Assignment 7
+
+Implement doubly linked list of bank accounts. Each accont have information including id, type, balance and account holder. The account holder details includes name, address & contact details. Write an menu-driven program to implement add first, add last, display all (forward), display all (backword), find by account id, find by account holder name, delete all functionalities.
