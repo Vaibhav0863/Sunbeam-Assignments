@@ -28,3 +28,20 @@ Implement a circular queue of students. Each student information includes roll, 
 ### 7. Assignment 7
 
 Implement doubly linked list of bank accounts. Each accont have information including id, type, balance and account holder. The account holder details includes name, address & contact details. Write an menu-driven program to implement add first, add last, display all (forward), display all (backword), find by account id, find by account holder name, delete all functionalities.
+
+### Assignment 8
+
+A CSV file contains movies data in given form. Read the file and load data into a singly linked list of movie objects. Also give facility to find movies by name and by genre.
+    
+    movieid,title,genres
+
+    1,Toy Story (1995),Adventure|Animation|Children|Comedy|Fantasy
+    2,Jumanji (1995),Adventure|Children|Fantasy
+    3,Grumpier Old Men (1995),Comedy|Romance
+    4,Waiting to Exhale (1995),Comedy|Drama|Romance
+	5,Father of the Bride Part II (1995),Comedy 
+    6,Heat (1995),Action|Crime|Thriller
+    7,Sabrina (1995),Comedy|Romance
+    8,Tom and Huck (1995),Adventure|Children
+    9,Sudden Death (1995),Action 
+    10,GoldenEye (1995),Action|Adventure|Thriller
