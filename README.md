@@ -44,4 +44,8 @@ A CSV file contains movies data in given form. Read the file and load data into 
     7,Sabrina (1995),Comedy|Romance
     8,Tom and Huck (1995),Adventure|Children
     9,Sudden Death (1995),Action 
-    10,GoldenEye (1995),Action|Adventure|Thriller
+    10,GoldenEye (1995),Action|Adventure|Thriller 
+
+### Assignment 9
+
+An inventory management system needs to manage data of the items into binary file. Each item have id, name, price and quantity. Write a menu-driven program to implement add, find, display all, edit and delete operations from the items file. Order id (int) should be generated automatically and must be unique.
