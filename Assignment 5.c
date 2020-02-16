@@ -5,7 +5,7 @@
 
 struct employee
 {
-	int id;
+	int 	id;
 	char name[MAX];
 	char address[MAX];
 	int salary;
@@ -47,7 +47,7 @@ void showInfo(struct employee emp,struct tm *local)
 
 	printf("Experience of employee till date is %d months.\n",getExperience(emp,local));
 
-	printf("Probation of employee ending in %d month\n",((emp.doj.mm + 3)%12)==0? 12 : (emp.doj.mm + 3)%12);
+	printf("Probation of employee ending in %d, %d.\n",((emp.doj.mm + 3)%12)==0? 12 : (emp.doj.mm + 3)%12,((emp.doj.mm + 3)%12)==0?emp.doj.yy:emp.doj.yy+1);
 }
 
 int main()
@@ -57,7 +57,7 @@ int main()
 
 	struct tm *local = localtime(&now);
 
-	struct employee emp={1,"Vaibhav","pune",1000,21,11,1997,21,6,2019};
+	struct employee emp={1,"Vaibhav","pune",1000,21,11,1997,21,10,2019};
 
 	showInfo(emp,local);
 
