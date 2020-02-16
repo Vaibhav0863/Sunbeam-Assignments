@@ -10,6 +10,7 @@ void minElement(int*);
 void maxElement(int*);
 void addElement(int*);
 void delElement(int*);
+int cnt = 0;
 
 int main()
 {
@@ -44,8 +45,8 @@ int main()
 
 int getOp()
 {
-	enum operations op;
-
+	// enum operations op;
+	int op;
 	
 	printf("0:EXIT\n1:MIN\n2:MAX\n3:ADD\n4:DELETE\n");
 
@@ -59,17 +60,24 @@ void minElement(int *a)
 {
 	int min = 100000;
 	int id;
-	int i=0;
-	while(i<10)
+	if(cnt>0)
 	{
-		if(a[i]<min && a[i]!=0)
+		int i=0;
+		while(i<10)
 		{
-			min = a[i];
-			id = i;
+			if(a[i]<min && a[i]!=0)
+			{
+				min = a[i];
+				id = i;
+			}
+			i++;
 		}
-		i++;
+		printf("Minimum number in array is %d at %d location\n",min,id);
 	}
-	printf("Minimum number in array is %d at %d location\n",min,id);
+	else
+	{
+		printf("Array is Empty\n");
+	}
 }
 
 void maxElement(int *a)
@@ -77,17 +85,25 @@ void maxElement(int *a)
 	int max = 1;
 	int id;
 
-	int i=0;
-	while(i<10)
+	if(cnt > 0)
 	{
-		if(max<a[i])
+
+		int i=0;
+		while(i<10)
 		{
-			max = a[i];
-			id = i;
+			if(max<a[i])
+			{
+				max = a[i];
+				id = i;
+			}
+			i++;
 		}
-		i++;
+		printf("Maximum number in array is %d at %d location\n",max,id);
 	}
-	printf("Maximum number in array is %d at %d location\n",max,id);
+	else
+	{
+		printf("Array is Empty\n");
+	}
 }
 
 void addElement(int *a)
@@ -108,6 +124,7 @@ void addElement(int *a)
 
 	printf("Enter location and number\n");
 	scanf("%d%d",&loc,&n);
+	cnt++;
 	if(a[loc]!=0)
 	{
 		printf("You cannot insert number to that location\n");
@@ -141,6 +158,7 @@ void delElement(int *a)
 	if(a[loc]!=0)
 	{
 		a[loc] = 0;
+		cnt--;
 		printf("Number deleted from array\n");
 	}
 	else
