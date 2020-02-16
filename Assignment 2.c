@@ -113,50 +113,98 @@ void strRev(char *p)
 	}
 }
 
-int strCmp(char *p,char *q)
+int strCmp(char *src,char *des)
 {
-	int flag = 0;
-	if(strlen(p)==strlen(q))
+	int srcLen = strlen(src);
+	int desLen = strlen(des);
+	// int flag = 0;
+	// if(strlen(p)==strlen(q))
+	// {
+	// 	int i = 0;
+
+	// 	while(*(p+i)!='\0')
+	// 	{
+	// 		if((*(p+i)-*(q+i))<0)
+	// 		{
+	// 			flag = -1;
+	// 			// break;
+	// 			return flag;
+	// 		}
+	// 		else if((*(p+i)-*(q+i))>0)
+	// 		{
+	// 			flag = 1;
+	// 			// break;
+	// 			return flag;
+	// 		}
+	// 		i++;
+	// 	}
+
+	// 	// if(flag == 1)
+	// 	// {
+	// 	// 	return flag;
+	// 	// }
+	// 	// else if(flag == -1)
+	// 	// {
+	// 	// 	return flag;
+	// 	// }
+	// 	if(flag == 0 )
+	// 	{
+	// 		return flag;
+	// 	}
+	// 	else
+	// 	{
+	// 		return flag;
+	// 	}
+	// }
+	// else
+	// {
+	// 	flag = 1;
+	// 	return flag;
+	// }
+	int temp;
+	if(srcLen <= desLen)
 	{
-		int i = 0;
-
-		while(*(p+i)!='\0')
+		for(int i=0;i<desLen;i++)
 		{
-			if((*(p+i)-*(q+i))<0)
+			if(*(src+i)== '\0')
 			{
-				flag = -1;
-				// break;
-				return flag;
+				temp = -*(des+i);
+				break;
 			}
-			else if((*(p+i)-*(q+i))>0)
+			else if(*(src + i) != *(des + i))
 			{
-				flag = 1;
-				// break;
-				return flag;
+				temp = (*(src+i) - *(des+i));
+				break;
 			}
-			i++;
+			else
+			{
+				temp = 0;
+			}
+
 		}
 
-		// if(flag == 1)
-		// {
-		// 	return flag;
-		// }
-		// else if(flag == -1)
-		// {
-		// 	return flag;
-		// }
-		if(flag == 0 )
-		{
-			return flag;
-		}
-		else
-		{
-			return flag;
-		}
+		return temp;
 	}
 	else
 	{
-		flag = 1;
-		return flag;
+		for(int i=0;i<srcLen;i++)
+		{
+			if(*(des+i)== '\n')
+			{
+				temp = *(src+i);
+				break;
+			}
+			else if(*(src + i) != *(des + i))
+			{
+				temp = (*(src+i) - *(des+i));
+				break;
+			}
+			else
+			{
+				temp = 0;
+			}
+
+		}
+		return temp;
 	}
 }
