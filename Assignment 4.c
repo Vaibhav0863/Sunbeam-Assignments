@@ -30,7 +30,7 @@ void getData(struct book *p)
 	scanf("%d",&p->id);
 
 	printf("Enter Name\n");
-	scanf("%s",&p->name);
+	scanf("%s",p->name);
 
 	printf("Enter Price\n");
 	scanf("%d",&p->price);
