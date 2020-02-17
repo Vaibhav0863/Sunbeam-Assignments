@@ -103,7 +103,8 @@ void dequeue(QUEUE *q)
 
 int getOption()
 {
-	enum options op;
+	// enum options op; // NOT WORKING IN LINUX
+	int op;
 
 	printf("0. EXIT\n1. ENQUEUE\n2. DEQUEUE\n3. DISPLAY\n");
 	printf("Enter Your choice\n");
