@@ -2,6 +2,9 @@
 #include "string.h"
 #include "stdlib.h"
 
+
+FILE *fp;
+
 enum options{EXIT=0,ADD,FIND,DISPLAY_ALL,EDIT,DELETE};
 
 int len = 0;
@@ -90,7 +93,6 @@ int getOption()
 
 void loadData()
 {
-	FILE *fp;
 	DATA data;
 
 	fp = fopen("data.bin","rb");
@@ -126,8 +128,6 @@ void loadData()
 // Upload the entire list into file
 void uploadData()
 {
-	FILE *fp;
-
 	fp = fopen("data.bin","wb");
 
 	if(fp == NULL)
@@ -146,7 +146,7 @@ void uploadData()
 				trav = trav->next;
 			}
 			printf("--------------------------\n");
-			printf("DATA UPDATED....\n");
+			printf("FILE SAVED....\n");
 			printf("--------------------------\n");
 
 
@@ -196,12 +196,12 @@ void findByName(char *name)
 		NODE *trav = head;
 		int flag = 0;
 
-		strlwr(name);
+		// strlwr(name);
 
 		int i=0;
 		while(i < len)
 		{
-			if(strstr(strlwr(trav->data.name),name) != NULL)
+			if(strstr((trav->data.name),name) != NULL)
 			{
 				printf("====================================\n");
 				printf("ID : %d\n", trav->data.id);
@@ -218,7 +218,9 @@ void findByName(char *name)
 
 		if (flag == 0)
 		{
+			printf("---------------------------------\n");
 			printf("DATA NOT FOUND\n");
+			printf("---------------------------------\n");
 		}
 
 }
@@ -269,32 +271,123 @@ void delFirst()
 
 void deleteNode()
 {
-	int loc;
-	printf("Enter Index of Product : ");
-	scanf("%d",&loc);
-	if(loc == 1)
+	if(head == NULL)
 	{
-		delFirst();
-	}
-	else if(loc == len)
-	{
-		delLast();
+		printf("-------------------------\n");
+		printf("FILE IS EMPTY\n");
+		printf("-------------------------\n");
 	}
 	else
 	{
-		NODE *temp,*trav;
-		trav = head;
-		for(int i=1;i<loc-1;i++)
-		{	
-			trav = trav->next;
+		NODE *trav = head;
+		NODE *temp;
+
+		int index;
+		printf("Enter Product ID : ");
+		scanf("%d",&index);
+		int cnt = 1;
+		
+		if(trav->data.id == index)
+		{
+			delFirst();
+			printf("----------------------------------------\n");
+			printf("PRODUCT GET DELETED FROM FILE\n");
+			printf("----------------------------------------\n");
 		}
-		temp = trav->next;
-		trav->next = temp->next;
-		free(temp);
-		len--;
+		else
+		{
+			int flag = 0;
+			for(int i=0;i<len-1;i++)
+			{
+				if(trav->next->data.id == index)
+				{
+					flag = 1;
+					break;
+				}
+				trav = trav->next;
+
+			}
+
+			if(flag == 1)
+			{
+				if(trav->next!= NULL)
+				{
+					temp = trav->next;
+					trav->next = temp->next;
+					free(temp);
+					len--;	
+					printf("----------------------------------------\n");
+					printf("PRODUCT GET DELETED FROM FILE\n");
+					printf("----------------------------------------\n");
+				}
+				else
+				{
+					delLast();
+					printf("----------------------------------------\n");
+					printf("PRODUCT GET DELETED FROM FILE\n");
+					printf("----------------------------------------\n");
+				}
+			}
+			else
+			{
+				printf("ID NOT FOUND\n");
+			}
+		}
+	
 	}
 }
 
+
+void editData()
+{
+	int id;
+	printf("Enter ID for edit data\n");
+	scanf("%d",&id);
+
+	NODE *trav = head;
+
+	if(trav == NULL)
+	{
+		printf("``````````````````````````\n");
+		printf("FILE IS EMPTY\n");
+		printf("``````````````````````````\n");
+	}
+	else
+	{
+		int flag = 0;
+		while(trav != NULL)
+		{
+			if(trav->data.id == id)
+			{
+				flag = 1;
+				break;
+			}
+			trav = trav->next;
+		}
+
+		if(flag == 1)
+		{
+			int temp;
+			printf("Enter New Quantities : ");
+			scanf("%d",&temp);
+
+			trav->data.quantity = temp;
+
+			printf("-------------------------\n");
+			printf("QUANTITES UPDATED\n");
+			printf("-------------------------\n");
+		}
+		else
+		{
+			printf("```````````````````````````\n");
+			printf("RECORD NOT FOUND\n");
+			printf("```````````````````````````\n");
+		}
+	}
+
+
+
+}
 
 
 
@@ -323,7 +416,8 @@ int main()
 						display();
 						break;
 				case EDIT:
-						printf("EDIT\n");
+						// printf("EDIT\n");
+						editData();
 						break;
 				case DELETE:
 						deleteNode();
