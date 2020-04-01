@@ -1,7 +1,7 @@
 # Sunbeam-Assignments
 Sunbeam precourse assignments
 
-### 1. ["Assignment 1"](./Assignment 1.c)
+### 1. ["Assignment 1"](./Assignment\ 1.c)
 
 Input a string from user on command line. String may have multiple commas e.g. "Welcome,to,Sunbeam,CDAC,Diploma,Course". Print each word individually. Hint: use strtok() function.
 
@@ -31,21 +31,4 @@ Implement doubly linked list of bank accounts. Each accont have information incl
 
 ### Assignment 8
 
-A CSV file contains movies data in given form. Read the file and load data into a singly linked list of movie objects. Also give facility to find movies by name and by genre.
-    
-    movieid,title,genres
-
-    1,Toy Story (1995),Adventure|Animation|Children|Comedy|Fantasy
-    2,Jumanji (1995),Adventure|Children|Fantasy
-    3,Grumpier Old Men (1995),Comedy|Romance
-    4,Waiting to Exhale (1995),Comedy|Drama|Romance
-	5,Father of the Bride Part II (1995),Comedy 
-    6,Heat (1995),Action|Crime|Thriller
-    7,Sabrina (1995),Comedy|Romance
-    8,Tom and Huck (1995),Adventure|Children
-    9,Sudden Death (1995),Action 
-    10,GoldenEye (1995),Action|Adventure|Thriller 
-
-### Assignment 9
-
-An inventory management system needs to manage data of the items into binary file. Each item have id, name, price and quantity. Write a menu-driven program to implement add, find, display all, edit and delete operations from the items file. Order id (int) should be generated automatically and must be unique.
+A CSV file contains movies data in given form. Read the file and load data into a singly linked list of movie objects. Also give facility to find m
