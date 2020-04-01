@@ -1,8 +1,7 @@
 # Sunbeam-Assignments
 Sunbeam precourse assignments
 
-### 1. ["Assignment 1"](./Assignmen%201.c)
-
+### 1. ["Assignment 1"](https://github.com/Anonymous2422/Sunbeam-Assignments/blob/master/Assignment%201.c)
 Input a string from user on command line. String may have multiple commas e.g. "Welcome,to,Sunbeam,CDAC,Diploma,Course". Print each word individually. Hint: use strtok() function.
 
 ### 2. Assignment 2
